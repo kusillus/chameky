@@ -1,0 +1,12 @@
+#!/bin/bash
+cat << "EOF"
+script weeee
+EOF
+echo 
+if [ -n $1 ]
+then
+    echo "Scrapeando por el proceso que scrapea"
+    curl http://192.168.1.152:8000/websites/api/verify-content-url\?url\=$1 | python -m json.tool
+else
+    echo "Debe ingresar una URL"
+fi
